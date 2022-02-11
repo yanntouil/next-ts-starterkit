@@ -1,0 +1,25 @@
+/**
+ * Globals styles
+ */
+
+// Abstracts
+@import 'framework/abstracts/variables';
+@import 'framework/abstracts/mixins';
+@import 'framework/abstracts/functions';
+
+// Base
+@import 'framework/base/reset';
+@import 'framework/base/typography';
+
+// Layout
+@import 'framework/layout/base';
+@import 'framework/layout/header';
+@import 'framework/layout/menu';
+@import 'framework/layout/main';
+@import 'framework/layout/footer';
+
+
+
+
+
+

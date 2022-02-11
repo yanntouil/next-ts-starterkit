@@ -1,5 +1,5 @@
 {
-  "name": "fakestreet",
+  "name": "starter-kit",
   "private": true,
   "scripts": {
     "dev": "next dev",

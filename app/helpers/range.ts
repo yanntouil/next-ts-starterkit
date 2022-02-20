@@ -6,7 +6,7 @@
  * @param {number} [step=1]
  * @return {number[]} 
  */
-export  const range = (from: number, to: number, step: number = 1): number[] => {
+export const range = (from: number, to: number, step: number = 1): number[] => {
     let i = from
     const range: number[] = []
     while (i <= to) {

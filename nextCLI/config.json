@@ -1,0 +1,29 @@
+{
+    "typescript": true,
+    "components": {
+        "folder": "components"
+
+    },
+    "pages": {
+        "folder": "pages"
+    },
+    "helpers": {
+        "folder": "app/helpers"
+    },
+    "styles": {
+        "folders": {
+            "mixins": "styles/mixins",
+            "functions": "styles/functions"
+        },
+        "variables": "styles/variables"
+    },
+    "translations": {
+        "folders": {
+            "base": "translations",
+            "components": "components",
+            "pages": "pages"
+        },
+        "languages": ["fr", "en"]
+    }
+
+}

@@ -1,19 +1,19 @@
+import type { FC } from 'react'
 import Link from 'next/link'
 import config from 'app/config'
-import * as React from 'react'
 import { useTranslation } from 'app/hooks'
-
+import styles from './Footer.module.scss'
 
 /**
  * Footer
  */
-const Footer: React.FC = () => {
+const Footer: FC = () => {
     const { __ } = useTranslation('layout.footer')
     const menu = config.bottomLinks || []
     return (
-        <footer className="footer">
+        <footer className={styles.footer}>
             Footer
-            <div className="footer-bottom">
+            <div className={styles['footer-bottom']}>
                 {config.copyright && (
                     <Link href={config.copyright.link}>
                         <a className="footer-bottom-copyright">

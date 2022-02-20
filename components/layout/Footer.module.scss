@@ -1,0 +1,15 @@
+@import '/styles/framework/abstracts/variables';
+@import '/styles/framework/abstracts/functions';
+@import '/styles/framework/abstracts/mixins';
+
+
+/**
+ * 
+ */
+.footer {
+    display: flex; flex-direction: column; 
+    background: $red;
+    &-bottom {
+        display: flex; justify-content: space-between; align-items: center;
+    }
+}

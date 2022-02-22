@@ -1,12 +1,19 @@
 # NextCLI
-NextCLI est un custom node cli developpé pour simplifier la création de nouveau fichier.
+NextCLI is a custom node cli developed to simplify the creation of new files.
 
 ## Launch CLI
 ```
 $ node nextCLI
+What would you like to do (Use arrow keys)
+> New page
+  New component
+  New helper
+  New translation
+  New Style
+  Exit
 ```
 ## Create page
-Vous avez la posibilité de créer une nouvelle page statique ou dynamique simplement en séléctionnant l'option `New page`
+You have the possibility to create a new static or dynamic page simply by selecting the option `New page`
 
 ### Select type of page
 ```
@@ -65,5 +72,45 @@ Would you like to create an other page (Y/n)
 ```
 A validation message will inform you for each files created, in case one of the files has already been created, a red message will inform you and if it is the page component the creation will be directly stopped.
 
+## Create component
+You have the possibility to create a new component simply by selecting the option New component
+### Select type of componnent
+```
+Which kind of components would you like to create (Use arrow keys)
+> UI
+  Pages
+  Layout
+```
+
+### Select options
+```
+Options : (Press <space> to select, <a> to to&ggle all, <i> to invert selection, and <enter> to proceed)
+>( ) With translation
+ ( ) With module styles
+```
+
+### Componnent name
+```
+Componnent name : _
+```
+
+### After that
+```
+Name : MySuperComponent
+
+Component MySuperComponent has been created in ./components/ui/MySuperComponent.tsx and added in index
+Translation uiMySuperComponent has been created in ./translations/components/ui/MySuperComponent.ts and added in index
+
+Would you like to create an other component (Y/n)
+```
+
+## Create helper
+To do
 
 
+## Create translation
+To do
+
+
+## Create Style
+To do

@@ -14,7 +14,7 @@ ${options.withTranslation ?
     `import { useTranslation } from 'app/hooks'\n` : 
     ''
 }${options.withStyle ? 
-    `import styles from '${options.withTranslation}'\n` : 
+    `import styles from '${options.withStyle}'\n` : 
     ''
 }
 type Props = {

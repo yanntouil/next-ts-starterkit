@@ -26,7 +26,7 @@ async function createComponent() {
             },
             {
                 name: 'With module styles',
-                value: 'withStyles'
+                value: 'withStyle'
             },
         ]
     }])

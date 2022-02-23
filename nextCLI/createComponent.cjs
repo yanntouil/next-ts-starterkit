@@ -1,5 +1,6 @@
 const inquirer = require('inquirer')
-const { componentRegex, componentPageRegex } = require('./helpers.cjs')
+const config = require('./config.json')
+const { componentRegex, componentPageRegex, ucFirst } = require('./helpers.cjs')
 const { create } = require('./components/create.cjs')
 
 
@@ -12,25 +13,12 @@ async function createComponent() {
         type: 'list',
         name: 'type',
         message: 'Which kind of components would you like to create',
-        choices: [
-            {
-                name: 'UI',
-                value: 'ui'
-            },
-            {
-                name: 'Pages',
-                value: 'pages'
-            },
-            {
-                name: 'Layout',
-                value: 'layout'
-            },
-        ]
+        choices: config.components.types.map(type => ({ name: ucFirst(type), value: type }))
     }])
     const { options } = await inquirer.prompt([{
         type: 'checkbox',
         name: 'options',
-        message: 'Options :',
+        message: 'Component options :',
         choices: [
             {
                 name: 'With translation',
@@ -45,7 +33,7 @@ async function createComponent() {
     const { name } = await inquirer.prompt([{
         type: 'input',
         name: 'name',
-        message: "Name :",
+        message: "Component name :",
         validate: (value) => value.match(type === 'pages' ? componentPageRegex : componentRegex) ? 
             true : 
             `Name must be valid and can include folder`,

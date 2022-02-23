@@ -39,7 +39,7 @@ function create(name, options, type, dataFetching) {
     // Display success
     console.log(chalk.green(`Page ${chalk.bold(name)} has been created in ${chalk.bold(module.fullPath)}`))
     // Create optionals file
-    if (options.includes('withTranslation')) createTranslation(name, 'pages')
+    if (options.includes('withTranslation')) createTranslation(name, 'page')
     if (options.includes('withStyle')) createStyle(name, 'page')
 }
 exports.create = create

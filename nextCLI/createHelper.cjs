@@ -34,7 +34,7 @@ async function createHelper() {
         {
             type: 'input',
             name: 'name',
-            message: "Name :",
+            message: "Helper name :",
             validate: (value) => value.match(helperRegex) ? true : `Name must be valid (camelCase|PascalCase|UPPER_SNAKE_CASE)`,
         },
     ])

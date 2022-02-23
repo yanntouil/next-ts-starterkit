@@ -1,4 +1,5 @@
 const inquirer = require('inquirer')
+const config = require('./config.json')
 const { ucFirst, pageRegex, componentRegex, styleRegex } = require('./helpers.cjs')
 const { create } = require('./styles/create.cjs')
 
@@ -35,20 +36,7 @@ async function createStyle() {
         type: 'list',
         name: 'subType',
         message: 'Type :',
-        choices: [
-            {
-                name: 'UI',
-                value: 'ui'
-            },
-            {
-                name: 'Layout',
-                value: 'layout'
-            },
-            {
-                name: 'Pages',
-                value: 'pages'
-            },
-        ]
+        choices: config.components.types.map(type => ({ name: ucFirst(type), value: type }))
     }]) : { subType: ''}
     
     const { name } = await inquirer.prompt([{

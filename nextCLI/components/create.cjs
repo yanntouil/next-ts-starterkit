@@ -39,7 +39,7 @@ function create(name, type, options) {
     // Display success
     console.log(chalk.green(`Component ${chalk.bold(module.name)} has been created in ${chalk.bold(module.fullPath)} and added in index`))
     // Create optionals file
-    if (options.includes('withTranslation')) createTranslation(name, 'components', type)
+    if (options.includes('withTranslation')) createTranslation(name, 'component', type)
     if (options.includes('withStyle')) createStyle(name, 'component', type)
 }
 exports.create = create

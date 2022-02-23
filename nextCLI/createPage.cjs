@@ -25,7 +25,7 @@ async function createPage() {
     const { options } = await inquirer.prompt([{
         type: 'checkbox',
         name: 'options',
-        message: 'Options :',
+        message: 'Page options :',
         choices: [
             {
                 name: 'With translation',

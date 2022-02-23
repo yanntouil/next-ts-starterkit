@@ -1,5 +1,6 @@
 const inquirer = require('inquirer')
-const { pageRegex, componentRegex } = require('./helpers.cjs')
+const config = require('./config.json')
+const { pageRegex, componentRegex, ucFirst } = require('./helpers.cjs')
 const { create } = require('./translations/create.cjs')
 
 /**
@@ -13,40 +14,27 @@ async function createTranslation() {
         message: 'Which kind of translation would you like to create',
         choices: [
             {
-                name: 'Pages',
-                value: 'pages'
+                name: 'Page',
+                value: 'page'
             },
             {
-                name: 'Components',
-                value: 'components'
+                name: 'Component',
+                value: 'component'
             },
         ]
     }])
-    const { subType } = (type === 'components') ? 
-    await inquirer.prompt([{
-        type: 'list',
-        name: 'subType',
-        message: 'Type :',
-        choices: [
-            {
-                name: 'UI',
-                value: 'ui'
-            },
-            {
-                name: 'Layout',
-                value: 'layout'
-            },
-            {
-                name: 'Pages',
-                value: 'pages'
-            },
-        ]
-    }]) : { subType: ''}
+    const { subType } = (type === 'component') ? 
+        await inquirer.prompt([{
+            type: 'list',
+            name: 'subType',
+            message: 'Type :',
+            choices: config.components.types.map(type => ({ name: ucFirst(type), value: type }))
+        }]) : { subType: ''}
     const { name } = await inquirer.prompt([{
         type: 'input',
         name: 'name',
-        message: "Name :",
-        validate: (value) => value.match(type === 'pages' ? pageRegex : componentRegex) ? 
+        message: `${ucFirst(type)} name :`,
+        validate: (value) => value.match(type === 'page' ? pageRegex : componentRegex) ? 
             true : 
             `Name must be valid and can include folder name`
     }])

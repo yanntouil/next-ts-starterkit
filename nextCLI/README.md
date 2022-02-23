@@ -1,6 +1,14 @@
 # NextCLI
 NextCLI is a custom node cli developed to simplify the creation of new files.
 
+## Summary
+1. [Launch CLI](#launch-cli)
+2. [Create page](#create-page)
+3. [Create component](#create-component)
+4. [Create helper](#create-helper)
+5. [Create translation](#create-translation)
+6. [Create Style](#create-style)
+
 ## Launch CLI
 ```
 $ node nextCLI
@@ -105,12 +113,54 @@ Would you like to create an other component (Y/n)
 ```
 
 ## Create helper
-To do
+### Select type of helper
+```
+ Which kind of helper would you like to create (Use arrow keys)
+> Function
+  Arrow: () => {}
+  Short arrow: () => true
+  Constant
+```
 
+### Helper name
+```
+Helper name : _
+```
+### After that
 
 ## Create translation
-To do
+
+### Select type of translation
+```
+Which kind of translation would you like to create (Use arrow keys)
+> Page
+  Component
+```
+### Component or page name
+```
+Page name : _
+```
 
 
-## Create Style
-To do
+
+
+## Create style
+
+### Select type of style
+```
+Which kind of style would you like to create (Use arrow keys)
+> Page module styles
+  Component module styles
+  Mixin
+  Function
+```
+
+### Module styles
+```
+Page name : _
+```
+
+### Mixins or functions
+```
+Mixin name : _
+```

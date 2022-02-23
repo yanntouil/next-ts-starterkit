@@ -1,8 +1,10 @@
 {
     "typescript": true,
     "components": {
-        "folder": "components"
-
+        "folder": "components",
+        "types": [
+            "ui", "layout", "pages"
+        ]
     },
     "pages": {
         "folder": "pages"

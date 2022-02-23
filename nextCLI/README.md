@@ -8,6 +8,8 @@ NextCLI is a custom node cli developed to simplify the creation of new files.
 4. [Create helper](#create-helper)
 5. [Create translation](#create-translation)
 6. [Create Style](#create-style)
+7. [Naming convention](#naming-convention)
+8. [Config](#config)
 
 ## Launch CLI
 ```
@@ -270,5 +272,39 @@ posts/[category]/update/Form => pagesPostsCategoryUpdateForm
 
 If you respect the basic JS and CSS convention everything must be easy, but if you want to do some exotic code :) don't worry just open nextCLI/helper.cjs and change or clear regex.
 
+## Config
+The basic configuration represents my own organization, but if you want to change the folder tree, it's up to you to edit the config file.
 
+### Components
+```
+{
+    "components": {
+        "folder": "components",// Components folder
+        "types": [
+            "ui", "layout", "pages"// Components types (pages is a key word use to specify : components related to a page)
+        ]
+    },
+    "pages": {
+        "folder": "pages"// Page folder
+    },
+    "helpers": {
+        "folder": "app/helpers"// Helpers folder 
+    },
+    "styles": {
+        "folders": {
+            "mixins": "styles/mixins",// Mixins SASS folder
+            "functions": "styles/functions"// Functions SASS folder
+        },
+        "variables": "styles/variables"// Variable SASS file imported in each styled module
+    },
+    "translations": {
+        "folders": {
+            "base": "translations",// Root translation folder
+            "components": "components",// Component translation folder
+            "pages": "pages"// Pages translation folder
+        },
+        "languages": ["fr", "en"]// Languages use to generate translations
+    }
+}
 
+```

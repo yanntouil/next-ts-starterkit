@@ -219,7 +219,7 @@ It is very important to respect naming convention, it's easy but regex won't let
   - Static page must be in lower kebab case
   - Dynamic page (param) must in camel case and between two brackets
   - Each pages can include a path (static and/or dynamic)
-```
+```js
 my-super-page
 posts/[category]
 posts/[category]/update
@@ -231,7 +231,7 @@ posts/[category]/[postId]
   - Component must be in pascal case
   - Component can be prefixed by a parent component using the path
   - Page components must used page as a path
-```
+```js
 // Type layout
 Header
 Frontend/Header
@@ -249,7 +249,7 @@ posts/[category]/[postId]/update/Form
   - Translation are related to a page or a component
   - Translation respect page or component naming convention
   - Translation dotted index will be prefixed by `page` or `component type`
-```
+```js
 // Page to indexed dotted
 my-amazing-page => pageMyAmazingPage
 posts/[category]/update => pagePostsCategoryUpdate

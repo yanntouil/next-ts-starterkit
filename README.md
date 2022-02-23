@@ -1,4 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next Typescript Starter kit
+Next Typescript Starter kit (NTSK) is a boiler plate use to simplify my development under Next. 
+NTSK mixes the base of my configuration, the folder tree and most of my helpers, hooks, ... NTSK also includes the integration of Redux and my translation manager and my nextCLI to save time on file creation.
+
+## Summary
+1. [Getting Started](#getting-started)
+2. [Config](#config)
+3. [Helpers](#helpers)
+4. [Hooks](#hooks)
+5. [Redux](#redux)
+6. [NextCLI](#nextcli)
+7. [Translation](#translation)
 
 ## Getting Started
 
@@ -18,17 +29,16 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+## Config
 
-To learn more about Next.js, take a look at the following resources:
+## Helpers
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Hooks
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Redux
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## NextCLI
+[Take a look on NextCLI ReadMe](https://github.com/yanntouil/next-ts-starterkit/tree/main/nextCLI#config)
+## Translation
+Translation manager is base on [Laravel Localization](https://laravel.com/docs/9.x/localization). 
+I left the use to recreate a javascript version and currently React version base on Hooks and Redux to facilitate the creation and use of translation files. 

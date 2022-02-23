@@ -270,13 +270,11 @@ posts/[category]/update/Form => pagesPostsCategoryUpdateForm
   - Styled Module must respect the related page or component naming convention
   - Mixins and functions must be in lower kebab case or lower snake case
 
-If you respect the basic JS and CSS convention everything must be easy, but if you want to do some exotic code :) don't worry just open nextCLI/helper.cjs and change or clear regex.
+If you respect the basic JS and CSS convention everything must be easy, but if you want to do some exotic code :) don't worry just open `nextCLI/helper.cjs` and change or clear regex.
 
 ## Config
-The basic configuration represents my own organization, but if you want to change the folder tree, it's up to you to edit the config file.
-
-### Components
-```
+The basic configuration represents my own organization, but if you want to change the folder tree, it's up to you to edit the config file `nextCLI/config.json`.
+```js
 {
     "components": {
         "folder": "components",// Components folder

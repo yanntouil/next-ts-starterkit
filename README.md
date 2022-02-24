@@ -38,7 +38,7 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 ## Redux
 
 ## NextCLI
-[Take a look on NextCLI ReadMe](https://github.com/yanntouil/next-ts-starterkit/tree/main/nextCLI#config)
+[Take a look on NextCLI ReadMe](https://github.com/yanntouil/next-ts-starterkit/tree/main/nextCLI)
 ## Translation
 Translation manager is base on [Laravel Localization](https://laravel.com/docs/9.x/localization). 
 I left the use to recreate a javascript version and currently React version base on Hooks and Redux to facilitate the creation and use of translation files. 

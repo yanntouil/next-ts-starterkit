@@ -5,10 +5,10 @@ NTSK mixes the base of my configuration, the folder tree and most of my helpers,
 ## Summary
 1. [Getting Started](#getting-started)
 2. [Config](#config)
-3. [Helpers](https://github.com/yanntouil/next-ts-starterkit/tree/main/app/helpers)
-4. [Hooks](https://github.com/yanntouil/next-ts-starterkit/tree/main/app/hooks)
+3. [Helpers](https://github.com/yanntouil/next-ts-starterkit/tree/main/app/helpers#helpers)
+4. [Hooks](https://github.com/yanntouil/next-ts-starterkit/tree/main/app/hooks#hooks)
 5. [Redux](#redux)
-6. [NextCLI](https://github.com/yanntouil/next-ts-starterkit/tree/main/nextCLI)
+6. [NextCLI](https://github.com/yanntouil/next-ts-starterkit/tree/main/nextCLI#nextcli)
 7. [Translation](#translation)
 
 ## Getting Started

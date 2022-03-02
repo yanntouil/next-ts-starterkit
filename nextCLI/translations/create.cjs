@@ -20,14 +20,14 @@ function create(name, type, subType) {
     const module = {}
     switch (type) {
         case 'page': {
-            module.name = camalize(`page ${name.replace('/', ' ')}`)// Prefixed by page
+            module.name = camalize(`page ${name.replaceAll('/', ' ')}`)// Prefixed by page
             module.fullPath = `./${folders.base}/${folders.pages}/${name}.ts`
             module.from = `${folders.base}/${folders.pages}/${name}`
             module.relatedFile = `${config.pages.folder}/${name}.tsx`
-            module.content = generatePage(name, module.relatedFile)
+            module.content = generatePage(name, subType.split(' '), module.relatedFile)
             break
         } case 'component': {
-            module.name = camalize(`${subType} ${name.replace('/', ' ')}`)// Prefixed by subType
+            module.name = camalize(`${subType} ${name.replaceAll('/', ' ')}`)// Prefixed by subType
             module.fullPath = `./${folders.base}/${folders.components}/${subType}/${name}.ts`
             module.from = `${folders.base}/${folders.components}/${subType}/${name}`
             module.relatedFile = `${config.components.folder}/${subType}/${name}.tsx`

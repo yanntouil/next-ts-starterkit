@@ -18,7 +18,7 @@ const { generate } = require('./generate.cjs')
 function create(name, options, type, dataFetching) {
     // Format params
     const module = {
-        name: type === 'dynamic' ? pascalize(name.replace('/', ' ').replace(/[\[\]]/g, '')) : pascalize(name.replace('/', ' ')),
+        name: type === 'dynamic' ? pascalize(name.replaceAll('/', ' ').replace(/[\[\]]/g, '')) : pascalize(name.replaceAll('/', ' ')),
         fullPath: `./${config.pages.folder}/${name}.tsx`,
         from: `${config.pages.folder}/${name}`,
     }
@@ -30,6 +30,7 @@ function create(name, options, type, dataFetching) {
     const parseOptions = {
         withTranslation: options.includes('withTranslation') ? 'page' + module.name : false,
         withStyle: options.includes('withStyle') ? `${module.from}.module.scss` : false,
+        withSEO: options.includes('withSEO'),
         withServerSideProps: dataFetching === 'getServerSideProps',
         withStaticProps: dataFetching === 'getStaticProps',
         withStaticPaths: dataFetching === 'getStaticProps' && type === 'dynamic',
@@ -39,7 +40,7 @@ function create(name, options, type, dataFetching) {
     // Display success
     console.log(chalk.green(`Page ${chalk.bold(name)} has been created in ${chalk.bold(module.fullPath)}`))
     // Create optionals file
-    if (options.includes('withTranslation')) createTranslation(name, 'page')
+    if (options.includes('withTranslation')) createTranslation(name, 'page', options.includes('withSEO') ? 'withSEO' : '')
     if (options.includes('withStyle')) createStyle(name, 'page')
 }
 exports.create = create

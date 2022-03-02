@@ -1,0 +1,44 @@
+@import '/styles/variables';
+@import '/styles/functions';
+@import '/styles/mixins';
+
+
+.menu {
+    position: fixed; top: 0; right: 0; bottom: 0; left: 0;
+    display: flex; justify-content: center; align-items: center;
+    background-color: rgba(0, 0, 0, .95);
+    &-close {
+        position: absolute; top: calc($gap / 2); right: $gap;
+        display: flex; justify-content: center; align-items: center;
+        width: 3rem; height: 3rem;
+        border-radius: 1.5rem;
+        * {
+            width: 1.2rem; height: 1.2rem;
+            fill: currentColor;
+            color: #ffffff;
+        }
+    }
+    &-languages {
+        position: absolute; bottom: $gap; right: $gap;
+        display: flex;
+        gap: $gap;
+        &-item {
+            &-button {
+                position: relative;
+                display: flex; justify-content: center; align-items: center;
+                width: 2rem; height: 2rem;
+                border-radius: 1rem;
+            }
+        }
+    }
+    &-list {
+        display: flex; flex-direction: column; align-items: center;
+        gap: $gap;
+        &-item {
+            &-link {
+                font-size: 2rem;
+                color: #ffffff;
+            }
+        }
+    }
+}

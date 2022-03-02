@@ -3,20 +3,16 @@
  */
 
 // Abstracts
-@import 'framework/abstracts/variables';
-@import 'framework/abstracts/mixins';
-@import 'framework/abstracts/functions';
+@import 'variables';
+@import 'mixins';
+@import 'functions';
 
 // Base
-@import 'framework/base/reset';
-@import 'framework/base/typography';
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/document';
 
-// Layout
-@import 'framework/layout/base';
-@import 'framework/layout/header';
-@import 'framework/layout/menu';
-@import 'framework/layout/main';
-@import 'framework/layout/footer';
+
 
 
 

@@ -1,26 +1,18 @@
-/**
- * Configuration
- */
-type ConfigMenu = { name: string, pathname: string, children?: ConfigMenu }[]
-type Config = {
-    menu?: ConfigMenu,
-    copyright?: {author: string, year: number, link: string},
-    bottomLinks?: ConfigMenu,
-    translation: {
-        languages: string[],
-        defaultLanguage: string,
-        fallbackLanguage: string,
-        notFoundError: boolean,
-        locale: {
-            [key: string]: string
-        },
-        flags: {
-            [key: string]: string
-        },
-    }
-}
+import { Config } from "./config.types"
 
+/**
+ * Config
+ */
 const config: Config = {
+    sitename: 'Ourway',
+    siteurl: 'https://portfolio.ourway.io',
+    meta: {
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, perferendis.',
+        author: 'Author Name',
+        keywords: ['keywords1', 'keywords2', 'keywords3', 'keywords4', 'keywords5', 'keywords6'],
+        viewport: 'initial-scale=1.0, width=device-width',
+        twitter: '@TouilYann',
+    },
     menu: [
         { name: 'home', pathname: '/' },
         { name: 'contact', pathname: '/contact' },
@@ -45,8 +37,8 @@ const config: Config = {
             en: 'en-us',
         },
         flags: {
-            fr: '/images/flags/fr.svg',
-            en: '/images/flags/en.svg',
+            fr: '/images/flags/fr.png',
+            en: '/images/flags/en.png',
         }
 
     },

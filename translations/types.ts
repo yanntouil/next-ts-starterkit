@@ -1,3 +1,6 @@
+/**
+ * Translation Types
+ */
 export type TranslationLanguages = {
     [key: string]: TranslationObject
 }

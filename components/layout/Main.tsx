@@ -1,12 +1,12 @@
-import * as React from 'react'
-
+import { FC } from 'react'
+import styles from './Main.module.scss'
 
 /**
  * Main
  */
-const Main: React.FC = ({ children }) => {
+const Main: FC = ({ children }) => {
     return (
-        <main className="main">
+        <main className={styles['main']}>
             {children}
         </main>
     )

@@ -17,7 +17,7 @@ const { createIndex } = require('./createIndex.cjs')
 function create(name, type, options) {
     // Format params
     const module = {
-        name: camalize(name.replace('/', ' ')),
+        name: camalize(name.replaceAll('/', ' ')),
         fullPath: `./${config.components.folder}/${type}/${name}.tsx`,
         from: `${config.components.folder}/${type}/${name}`,
     }

@@ -3,15 +3,19 @@ import { useDispatch, useSelector } from 'react-redux'
 import Link from 'next/link'
 import Image from 'next/image'
 import config from 'app/config'
+import styles from './Header.module.scss'
+
 import { useOnClickOutside, useTranslation } from 'app/hooks'
 import { selectTranslation, setLanguage } from 'app/reducers/translation/reducer'
-import { selectLayout, toggleMenu } from 'app/reducers/layout/reducer'
+import { toggleMenu } from 'app/reducers/layout/reducer'
 
 /**
  * Header
  */
 const Header: FC = () => {
-    const { __ } = useTranslation('layout')
+    // Translation
+    const { __ } = useTranslation('layoutFront')
+    // Redux dispatch
     const dispatch = useDispatch()
     
     /**
@@ -45,34 +49,40 @@ const Header: FC = () => {
     const toggleShowLanguage = (): void => {
         setShowLanguage(!showLanguage)
     }
-
+    // Render
     return (
-        <header className="header">
-            <nav className="header-wrapper">
-                <div className="header-logo">
+        <header className={styles['header']}>
+            <nav className={styles['header-wrapper']}>
+                <div className={styles['header-logo']}>
                     <Link href='/'>
-                        <a className="header-logo-link">
+                        <a className={styles['header-logo-link']}>
+                            {/* Header Logo */}
                             Logo
                         </a>
                     </Link>
                 </div>
                 {config.menu && (
-                    <ul className="header-menu">
+                    <ul className={styles['header-menu']}>
+                        {/* Header menu link */}
                         {config.menu.map((link, index) => (
-                            <li key={`Header-menu-${index}`} className="header-menu-item">
+                            <li 
+                                key={`header-menu-${index}`} 
+                                className={styles['header-menu-item']}
+                            >
                                 <Link href={link.pathname}>
-                                    <a className="header-menu-item-link">
+                                    <a className={styles['header-menu-item-link']}>
                                         {__('menu.' + link.name)}
                                     </a>
                                 </Link>
                             </li>
                         ))}
+                        {/* Header languages button */}
                         <li 
-                            className="header-menu-language" 
+                            className={styles['header-menu-language']} 
                             ref={languageRef}
                         >
                             <button 
-                                className="header-menu-language-button"
+                                className={styles['header-menu-language-button']} 
                                 onClick={toggleShowLanguage}
                             >
                                 <Image 
@@ -83,20 +93,21 @@ const Header: FC = () => {
                                     alt={__('language.' + language)} 
                                 />
                             </button>
+                            {/* Header languages dropdown */}
                             {showLanguage && (
-                                <div className="header-menu-language-select">
-                                    <h2 className="header-menu-language-select-heading">{__('header.change-language')}</h2>
-                                    <ul className="header-menu-language-select-list">
+                                <div className={styles['header-menu-language-select']} >
+                                    <h2 className={styles['header-menu-language-select-heading']}>{__('header.change-language')}</h2>
+                                    <ul className={styles['header-menu-language-select-list']}>
                                         {config.translation.languages.map((item, index) => (
                                             <li 
-                                                key={`Header-languages-${index}`} 
-                                                className="header-menu-language-select-item"
+                                                key={`header-languages-${index}`} 
+                                                className={styles['header-menu-language-select-item']}
                                             >
                                                 <button 
-                                                    className="header-menu-language-select-button"
-                                                    onClick={e => changeLanguage(item)}
+                                                    className={styles['header-menu-language-select-button']}
+                                                    onClick={_ => changeLanguage(item)}
                                                 >
-                                                    <span className="header-menu-language-select-button-image">
+                                                    <span className={styles['header-menu-language-select-button-image']}>
                                                         <Image 
                                                             src={config.translation.flags[item]}
                                                             layout="fill" 
@@ -105,7 +116,7 @@ const Header: FC = () => {
                                                             alt={__('language.' + item)} 
                                                         />
                                                     </span>
-                                                    <span className="header-menu-language-select-button-text">
+                                                    <span className={styles['header-menu-language-select-button-text']}>
                                                         {__('language.' + item)}
                                                     </span>
                                                 </button>
@@ -115,9 +126,10 @@ const Header: FC = () => {
                                 </div>
                             )}
                         </li>
-                        <li className="header-menu-phone">
+                        {/* Header phone button */}
+                        <li className={styles['header-menu-phone']}>
                             <button 
-                                className="header-menu-phone-button"
+                                className={styles['header-menu-phone-button']}
                                 onClick={toggleShowMenu}
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z"/></svg>

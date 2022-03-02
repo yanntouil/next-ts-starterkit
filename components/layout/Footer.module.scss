@@ -1,15 +1,67 @@
-@import '/styles/framework/abstracts/variables';
-@import '/styles/framework/abstracts/functions';
-@import '/styles/framework/abstracts/mixins';
+@import '/styles/variables';
+@import '/styles/functions';
+@import '/styles/mixins';
 
-
-/**
- * 
- */
 .footer {
-    display: flex; flex-direction: column; 
-    background: $red;
+    &-wrapper {
+        @include container;
+        padding: $gap $gap 0;
+    }    
     &-bottom {
-        display: flex; justify-content: space-between; align-items: center;
+        @include container;
+        display: flex; align-items: center;
+        padding: $gap;
+        font-weight: 600;
+        line-height: 1.2;
+        @include media-min('md') {
+            justify-content: space-between;
+            gap: $gap;
+        }
+        @include media-max('md') {
+            flex-direction: column; justify-content: center;
+            gap: calc($gap / 4);
+        }
+        &-copyright {
+            display: flex; flex-direction: column; align-items: center;
+            gap: 0.125rem;
+            margin-bottom: -0.25rem;
+            &::after {
+                content: '';
+                display: block;
+                width: 0; height: 0.125rem;
+                background: linear-gradient(to right, #0ea5e9,#292524, #0ea5e9,#292524, #0ea5e9,#292524);
+                transition: width 300ms ease-in-out;
+            }
+            &:hover::after {
+                width: 100%; 
+            }
+        }
+        &-menu {
+            display: flex; align-items: center;
+            @include media-min('sm') {
+                gap: $gap;
+            }
+            @include media-max('sm') {
+                flex-direction: column;
+            }
+            &-item {
+                &-link {
+                    display: flex; flex-direction: column; align-items: center;
+                    gap: 0.125rem;
+                    margin-bottom: -0.25rem;
+                    &::after {
+                        content: '';
+                        display: block;
+                        width: 0; height: 0.125rem;
+                        background: $text-color;
+                        transition: width 300ms ease-in-out;
+                    }
+                    &:hover::after {
+                        width: 100%; 
+                    }
+                }
+            }
+        }
     }
 }
+

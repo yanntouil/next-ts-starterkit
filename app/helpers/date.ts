@@ -35,7 +35,7 @@ export const isSameDay = (date: Date, basedate: Date = new Date()): boolean =>
 
 
 /**
- * Checks if two date are the same day (day, month, year)
+ * Checks if date is before an other date (day, month, year)
  * @param {Date} date 
  * @param {Date} [basedate=(new Date())]
  * @returns {Boolean}
@@ -55,7 +55,7 @@ export const isBeforeDay = (date: Date, basedate: Date = new Date()): boolean =>
 }
 
 /**
- * Return ISO date
+ * Return ISO date (yyyy-mm-dd)
  * @param {Date} [date=(new Date())]
  * @returns {string}
  */
@@ -70,14 +70,13 @@ export const getDateISO = (date: Date = new Date()): string => [
  * @param {string} dateISO 
  * @returns {boolean}
  */
-export const DateISOIsValid = (dateISO: string): boolean => 
+export const dateISOIsValid = (dateISO: string): boolean => 
     dateISO.match(/^(\d{4})-(\d{2})-(\d{2})$/) && !isNaN(Date.parse(dateISO)) ? true : false
 
 /**
  * First day of the month for a given year from 1 - 7
- * ? 1 => Sunday, 7 => Saturday
  * @param {{month: number, year: number}} date 
- * @returns {number}
+ * @returns {number} 1 => Sunday, 7 => Saturday
  */
 export const getMonthFirstDay = (date: {month: number, year: number}): number => 
     (new Date(`${date.year}-${zeroPad(date.month)}-01`).getDay()) + 1
@@ -122,7 +121,7 @@ export const getNextMonth = (date: {month: number, year: number}): {month: numbe
  * Calandar day class
  * @class CalendarDay
  */
- export class CalendarDay {
+export class CalendarDay {
     year: number
     month: number
     day: number

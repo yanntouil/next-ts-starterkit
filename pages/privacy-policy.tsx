@@ -1,16 +1,14 @@
-import type { NextPage } from "next";
-import { NextSeo } from "next-seo";
+import { NextPage } from "next";
 import { useTranslation } from "app/hooks";
+import { NextSeo } from "next-seo";
 import config from "app/config";
-// Styles
-import styles from "pages/contact.module.scss";
-// Components
+import styles from "pages/privacy-policy.module.scss";
 
 /**
- * ContactPage
+ * PrivacyPolicyPage
  */
-const ContactPage: NextPage = () => {
-    const { __ } = useTranslation("pageContact");
+const PrivacyPolicyPage: NextPage = () => {
+    const { __ } = useTranslation("pagePrivacyPolicy");
     return (
         <>
             <NextSeo
@@ -20,7 +18,7 @@ const ContactPage: NextPage = () => {
                     description: __("meta.description"),
                     images: [
                         {
-                            url: `${config.siteurl}/images/home/opengraph.jpg`,
+                            url: `${config.siteurl}/images/PrivacyPolicy/opengraph.jpg`,
                             width: 1200,
                             height: 630,
                             alt: __("meta.title"),
@@ -33,5 +31,4 @@ const ContactPage: NextPage = () => {
         </>
     );
 };
-
-export default ContactPage;
+export default PrivacyPolicyPage;

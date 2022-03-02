@@ -1,14 +1,15 @@
-import { NextPage } from "next";
-import { useTranslation } from "app/hooks";
-import { NextSeo } from "next-seo";
-import config from "app/config";
-import styles from "pages/privacy-policy.module.scss";
+import { NextPage } from "next"
+import { useTranslation } from "app/hooks"
+import { NextSeo } from "next-seo"
+import config from "app/config"
+// Styles
+import styles from "pages/privacy-policy.module.scss"
 
 /**
  * PrivacyPolicyPage
  */
 const PrivacyPolicyPage: NextPage = () => {
-    const { __ } = useTranslation("pagePrivacyPolicy");
+    const { __ } = useTranslation("pagePrivacyPolicy")
     return (
         <>
             <NextSeo
@@ -26,9 +27,8 @@ const PrivacyPolicyPage: NextPage = () => {
                     ],
                 }}
             />
-
             <h1 className="page-heading">{__("page-title")}</h1>
         </>
-    );
-};
-export default PrivacyPolicyPage;
+    )
+}
+export default PrivacyPolicyPage

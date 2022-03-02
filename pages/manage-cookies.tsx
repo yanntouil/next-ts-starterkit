@@ -1,14 +1,15 @@
-import { NextPage } from "next";
-import { useTranslation } from "app/hooks";
-import { NextSeo } from "next-seo";
-import config from "app/config";
-import styles from "pages/manage-cookies.module.scss";
+import { NextPage } from "next"
+import { useTranslation } from "app/hooks"
+import { NextSeo } from "next-seo"
+import config from "app/config"
+// Styles
+import styles from "pages/manage-cookies.module.scss"
 
 /**
  * ManageCookiesPage
  */
 const ManageCookiesPage: NextPage = () => {
-    const { __ } = useTranslation("pageManageCookies");
+    const { __ } = useTranslation("pageManageCookies")
     return (
         <>
             <NextSeo
@@ -26,9 +27,8 @@ const ManageCookiesPage: NextPage = () => {
                     ],
                 }}
             />
-
             <h1 className="page-heading">{__("page-title")}</h1>
         </>
-    );
-};
-export default ManageCookiesPage;
+    )
+}
+export default ManageCookiesPage

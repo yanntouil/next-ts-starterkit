@@ -1,17 +1,20 @@
-// https://usehooks-ts.com/react-hook/use-timeout
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
+import { useIsomorphicLayoutEffect } from './'
+
 
 
 /**
  * Very similar to the useInterval hook, this React hook implements the native setTimeout function keeping the same interface.
  * You can enable the timeout by setting delay as a number or disabling it using null.
  * When the time finishes, the callback function is called.
+ * @param {() => void} callback 
+ * @param {number | null} delay 
  */
 function useTimeout(callback: () => void, delay: number | null) {
   const savedCallback = useRef(callback)
 
   // Remember the latest callback if it changes.
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     savedCallback.current = callback
   }, [callback])
 

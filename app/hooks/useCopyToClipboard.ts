@@ -4,6 +4,11 @@ import { useState } from 'react'
 type CopiedValue = string | null
 type CopyFn = (text: string) => Promise<boolean> // Return success
 
+/**
+ * This React hook provides a copy method to save a string in the clipboard and the copied value (default: null).
+ * If anything doesn't work, it prints a warning in the console and the value will be null.
+ * @returns {[copiedText: (string | null), copy: (text: string) => Promise<boolean>]}
+ */
 function useCopyToClipboard(): [CopiedValue, CopyFn] {
   const [copiedText, setCopiedText] = useState<CopiedValue>(null)
 

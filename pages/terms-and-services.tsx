@@ -1,14 +1,15 @@
-import { NextPage } from "next";
-import { useTranslation } from "app/hooks";
-import { NextSeo } from "next-seo";
-import config from "app/config";
-import styles from "pages/terms-and-services.module.scss";
+import { NextPage } from "next"
+import { useTranslation } from "app/hooks"
+import { NextSeo } from "next-seo"
+import config from "app/config"
+// Styles
+import styles from "pages/terms-and-services.module.scss"
 
 /**
  * TermsAndServicesPage
  */
 const TermsAndServicesPage: NextPage = () => {
-    const { __ } = useTranslation("pageTermsAndServices");
+    const { __ } = useTranslation("pageTermsAndServices")
     return (
         <>
             <NextSeo
@@ -26,7 +27,6 @@ const TermsAndServicesPage: NextPage = () => {
                     ],
                 }}
             />
-
             <h1 className="page-heading">{__("page-title")}</h1>
         </>
     );

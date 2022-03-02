@@ -1,17 +1,15 @@
-import type { NextPage } from "next";
-import { NextSeo } from "next-seo";
-import { useTranslation } from "app/hooks";
-import config from "app/config";
+import type { NextPage } from "next"
+import { NextSeo } from "next-seo"
+import { useTranslation } from "app/hooks"
+import config from "app/config"
 // Styles
-import styles from "pages/index.module.scss";
-// Components
+import styles from "pages/index.module.scss"
 
 /**
  * HomePage
  */
 const HomePage: NextPage = () => {
-    const { __ } = useTranslation("pageHome");
-
+    const { __ } = useTranslation("pageHome")
     return (
         <>
             <NextSeo
@@ -29,10 +27,9 @@ const HomePage: NextPage = () => {
                     ],
                 }}
             />
-
             <h1 className="page-heading">{__("page-title")}</h1>
         </>
-    );
-};
+    )
+}
 
-export default HomePage;
+export default HomePage

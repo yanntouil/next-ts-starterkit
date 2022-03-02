@@ -7,6 +7,14 @@ interface Size {
   height: number
 }
 
+/**
+ * This hook helps you to dynamically recover the width and the height of an HTML element. 
+ * Dimensions are updated on load, on mount/un-mount, when resizing the window and when the ref changes.
+ * @returns {[
+ *      setRef: Dispatch<SetStateAction<extends HTMLElement = HTMLDivElement | null>>, 
+ *      size: { width: number, height: number }
+ * ]}
+ */
 function useElementSize<T extends HTMLElement = HTMLDivElement>(): [
   (node: T | null) => void,
   Size,

@@ -6,6 +6,14 @@ interface Size {
   height: number
 }
 
+/**
+ * This hook helps you to dynamically recover the scrollWidth and the scrollHeight of an HTML element. 
+ * Dimensions are updated on load, on mount/un-mount, when resizing the window and when the ref changes.
+ * @returns {[
+ *      setRef: Dispatch<SetStateAction<extends HTMLElement = HTMLDivElement | null>>, 
+ *      size: { width: number, height: number }
+ * ]}
+ */
 function useElementScrollSize<T extends HTMLElement = HTMLDivElement>(): [
   (node: T | null) => void,
   Size,

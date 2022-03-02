@@ -2,9 +2,8 @@ import { useRef } from 'react'
 
 
 /**
- * Simple React hook that return a boolean;
- * True at the mount time
- * Then always false
+ * Simple React hook that return a boolean, true at the mount time, then always false
+ * @return {boolean}
  */
 function useIsFirstRender(): boolean {
   const isFirst = useRef(true)

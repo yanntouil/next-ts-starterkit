@@ -1,14 +1,14 @@
 # Helpers
 ## Summary
-1. [camalize()](#camalize)
-2. [className()](#className)
-3. [Date](#date)
-4. [pagination()](#pagination)
-5. [range()](#range)
-6. [REGEX](#regex)
-7. [ServerSideRendering](#serverSideRendering)
-8. [ucFirst()](#ucFirst)
-9. [zeroPad()](#zeroPad)
+- [camalize()](#camalize)
+- [className()](#className)
+- [Date](#date)
+- [pagination()](#pagination)
+- [range()](#range)
+- [REGEX](#regex)
+- [ServerSideRendering](#serverSideRendering)
+- [ucFirst()](#ucFirst)
+- [zeroPad()](#zeroPad)
 ## camalize()
 ```js
 /**

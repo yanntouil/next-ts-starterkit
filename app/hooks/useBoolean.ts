@@ -9,6 +9,17 @@ interface ReturnType {
   toggle: () => void
 }
 
+/**
+ * A simple abstraction to play with a boolean state
+ * @param {boolean} [defaultValue=false]
+ * @return {
+ *    value: boolean,
+ *    setValue: Dispatch<SetStateAction<boolean>>,
+ *    setTrue: () => void,
+ *    setFalse: () => void,
+ *    toggle: () => void,
+ * }
+ */
 function useBoolean(defaultValue?: boolean): ReturnType {
   const [value, setValue] = useState(!!defaultValue)
 

@@ -4,9 +4,17 @@ import { TranslationLanguages, TranslationObject, TranslationOptions } from 'tra
 import config from 'app/config';
 
 /**
- * Hook : useTranslation
+ * Return methods to get translation string
+ * __ : magic method to translate a string or a dotted context
+ * trans : Basic method to translate a string or a dotted context
+ * transChoice : Pluralize method to translate a string or a dotted context
+ * More about translation in translation README
  * @param {string?} parentContext Use in magic method to prefix each context
- * @return {{__: Function, trans: Function, transChoice: Function}}
+ * @return {{
+ *      __: (context: string, options?: {[key: string]: string | number)} => string,
+ *      trans: (context: string, options?: {[key: string]: string | number)} => string, 
+ *      transChoice: (context: string, count: number, options?: {[key: string]: string | number)}, language?: string) => string
+ * }}
  */
 export default function useTranslation(parentContext?: string): {
     __: (context: string, options?: TranslationOptions) => string,

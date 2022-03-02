@@ -14,6 +14,15 @@ function useEventListener<
   element: RefObject<T>,
 ): void
 
+
+/**
+ * Use EventListener with simplicity by React Hook. It takes as parameters a eventName, 
+ * a call-back functions (handler) and optionally a reference element. 
+ * You can see above two examples using useRef and window based event.
+ * @param {keyof WindowEventMap | keyof HTMLElementEventMap} eventName 
+ * @param {(WindowEventMap | HTMLElementEventMap | Event)=>void} handler 
+ * @param {RefObject<HTMLElement | void>} [element=void]
+ */
 function useEventListener<
   KW extends keyof WindowEventMap,
   KH extends keyof HTMLElementEventMap,

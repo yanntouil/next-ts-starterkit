@@ -1,16 +1,15 @@
-import type { NextPage } from "next";
-import { NextSeo } from "next-seo";
-import { useTranslation } from "app/hooks";
-import config from "app/config";
+import type { NextPage } from "next"
+import { NextSeo } from "next-seo"
+import { useTranslation } from "app/hooks"
+import config from "app/config"
 // Styles
-import styles from "pages/contact.module.scss";
-// Components
+import styles from "pages/contact.module.scss"
 
 /**
  * ContactPage
  */
 const ContactPage: NextPage = () => {
-    const { __ } = useTranslation("pageContact");
+    const { __ } = useTranslation("pageContact")
     return (
         <>
             <NextSeo
@@ -28,10 +27,9 @@ const ContactPage: NextPage = () => {
                     ],
                 }}
             />
-
             <h1 className="page-heading">{__("page-title")}</h1>
         </>
-    );
-};
+    )
+}
 
-export default ContactPage;
+export default ContactPage
